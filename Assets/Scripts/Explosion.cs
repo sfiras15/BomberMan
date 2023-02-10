@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
+    // Reference to the 3 renderers of the explosion
     public AnimatedSpriteRenderer start;
     public AnimatedSpriteRenderer middle;
     public AnimatedSpriteRenderer end;

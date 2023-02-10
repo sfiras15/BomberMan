@@ -10,12 +10,13 @@ public class BrickDestruction : MonoBehaviour
     public GameObject[] items;
     private void Start()
     {
+        // destroy the brick once the destruction animation ends
         Destroy(gameObject,brickDestructionTime);
     }
 
     private void OnDestroy()
     {
-       if (items.Length > 0 && Random.Range(0f,1f) > itemSpawnChance)
+       if (items.Length > 0 && Random.Range(0f,1f) < itemSpawnChance)
         {
             int randomIndex = Random.Range(0, 3);
             Instantiate(items[randomIndex], transform.position, Quaternion.identity);

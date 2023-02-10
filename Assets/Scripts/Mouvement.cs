@@ -59,8 +59,9 @@ public class Mouvement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        transform.position = new Vector2(transform.position.x + direction.x * speed * Time.fixedDeltaTime,
-            transform.position.y + direction.y * speed * Time.fixedDeltaTime);
+        Vector2 position = rigid2D.position;
+        Vector2 translation = direction * speed * Time.fixedDeltaTime;
+        rigid2D.MovePosition(position + translation);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
